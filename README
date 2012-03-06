@@ -6,3 +6,9 @@ Simple web service that allows you to store/read files through rest like operati
 Most Polopoly projects use this webservice when they want to use an alternative storage for images, video, etc. 
 
 Please refer to the unit/integration tests for an actual up-to-date documentation. 
+
+
+
+Uploading a remote HTTP resource
+========
+curl -X POST http://$HOST:$PORT/fileserver/httpFile/foo?url=http://www.domain.com/image.jpg

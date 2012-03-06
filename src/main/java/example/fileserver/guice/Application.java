@@ -13,8 +13,10 @@ import example.fileserver.mime.MimeDetector;
 import example.fileserver.repository.NamingScheme;
 import example.fileserver.repository.Repository;
 import example.fileserver.repository.UnbalancedTreeNamingScheme;
-import example.fileserver.resources.FileResourceResource;
-import example.fileserver.resources.MetadataResource;
+import example.fileserver.resources.FileWS;
+import example.fileserver.resources.MetadataWS;
+import example.fileserver.util.Downloader;
+import example.fileserver.util.HttpClientDownloader;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,14 +36,16 @@ public class Application extends GuiceServletContextListener
             {
 
                 // resources
-                bind(FileResourceResource.class);
-                bind(MetadataResource.class);
+                bind(FileWS.class);
+                bind(MetadataWS.class);
 
 
                 // IOC
                 bind(NamingScheme.class).to(UnbalancedTreeNamingScheme.class);
                 bind(FileCounter.class).to(FileSystemFileCounter.class);
                 bind(MimeDetector.class).to(DataMimeDetector.class);
+                bind(Downloader.class).to(HttpClientDownloader.class);
+
 
                 Configuration config = new Configuration();
                 bindConstant().annotatedWith(Names.named("RepositoryDirectory")).to(config.getRepositoryDirectory());

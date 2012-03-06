@@ -11,8 +11,8 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
 
-public class MetadataResourceIntegrationTest extends AbstractResourceIntegrationTest {
-    private static final String URL = WEBAPP + MetadataResource.RESOURCE + "/";
+public class MetadataWSIntegrationTest extends AbstractResourceIntegrationTest {
+    private static final String URL = WEBAPP + MetadataWS.RESOURCE + "/";
 
     @Test
     public void getMetadata() throws IOException, SAXException {

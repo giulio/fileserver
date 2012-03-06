@@ -18,10 +18,10 @@ import example.fileserver.util.ExpiresDateUtil;
 import example.fileserver.repository.Repository;
 import example.fileserver.repository.RepositoryStorageException;
 
-@Path(MetadataResource.RESOURCE + "/{id}{filename:(/filename/[^/]+?)?}")
-public class MetadataResource
+@Path(MetadataWS.RESOURCE + "/{id}{filename:(/filename/[^/]+?)?}")
+public class MetadataWS
 {
-    private static final String CLASS = MetadataResource.class.getName();
+    private static final String CLASS = MetadataWS.class.getName();
     private static final Logger LOG = Logger.getLogger(CLASS);
     public static final String RESOURCE = "metadata";
 
@@ -31,7 +31,7 @@ public class MetadataResource
     private Repository repository;
 
     @Inject
-    public MetadataResource(Repository repository) {
+    public MetadataWS(Repository repository) {
         this.repository = repository;
     }
 

@@ -19,11 +19,10 @@ import java.util.zip.CRC32;
 
 import static junit.framework.Assert.*;
 
-public class FileResourceResourceIntegrationTest extends AbstractResourceIntegrationTest
+public class FileWSIntegrationTest extends AbstractResourceIntegrationTest
 {
-    private static final String CLASS = FileResourceResourceIntegrationTest.class.getName();
-    private static final Logger LOG = Logger.getLogger(CLASS);
-    private static final String URL = WEBAPP + FileResourceResource.RESOURCE + "/";
+    private static final Logger LOG = Logger.getLogger(FileWSIntegrationTest.class.getName());
+    private static final String URL = WEBAPP + FileWS.BINARY_RESOURCE + "/";
 
     private long fixtureImageCRC = computeCRC32(new File(FIXTURE_IMAGE));
     public static final Pattern URL_ID_EXTRACTOR = Pattern.compile(".*/(\\d+)/filename/.*");
