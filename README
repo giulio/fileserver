@@ -8,7 +8,14 @@ Most Polopoly projects use this webservice when they want to use an alternative 
 Please refer to the unit/integration tests for an actual up-to-date documentation. 
 
 
+Examples
+========
 
 Uploading a remote HTTP resource
-========
 curl -X POST http://$HOST:$PORT/fileserver/httpFile/foo?url=http://www.domain.com/image.jpg
+
+Uploading a binary file
+curl --data-binary @$FILE_NAME http://$HOST:$PORT/fileserver/file/$FILE_NAME
+
+Reading 
+http://localhost:8082/fileserver/file/$FILE_ID
